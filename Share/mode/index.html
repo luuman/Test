@@ -1,0 +1,118 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<link href="css/table.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<title>购物</title>
+<SCRIPT LANGUAGE=javascript>
+<!--
+function SelectAll() {
+    for (var i=0;i<document.form1.UID.length;i++) {
+        var e=document.form1.UID[i];
+        e.checked=!e.checked;
+    }
+}
+function jiage(numname,pic){
+    var price=document.getElementById(pic).value
+    var zong=numname.value*price;
+    document.getElementById(pic+"zong").innerText=zong;
+    zongjiage=0;</documentr i=0;i<document.form1.UID.length;i++) {
+        var e=document.form1.UID[i];
+        if (e.checked==true){
+            var jiage=document.getElementById(e.value).value;
+            var shuangliang=document.getElementById(e.value+"num").value;
+            zongjiage=zongjiage+jiage*shuangliang;
+        }
+    }
+    document.getElementById("zongjiage").innerText=zongjiage;
+}
+function zjiage(){
+    zongjiage=0;
+    for (var i=0;i<document.form1.UID.length;i++) {
+        var e=document.form1.UID[i];
+        if (e.checked==true){
+            var jiage=document.getElementById(e.value).value;
+            var shuangliang=document.getElementById(e.value+"num").value;
+            zongjiage=zongjiage+jiage*shuangliang;
+        }
+    }
+    document.getElementById("zongjiage").innerText=zongjiage;
+}
+-->
+</script>
+<style type="text/css">
+*{margin:0; padding:0; font-size:12px;}
+#tablit {margin:0px;width:100%; height:400; border:#BCE2F3 1px solid;padding-top:10px;background:#E4F2FB;}
+#tablit dl{ float:left; width:100%;}
+#tablit dl dt{float:left;border-bottom:#64B8E4 1px solid; width:15px; height:31px; line-height:30px;}
+#tablit dl dd{float:left;width:110px;height:30px; line-height:30px; text-align:center;}
+#tablit .on{
+    border:#64B8E4 1px solid;
+    border-bottom:#FFF 1px solid;
+    color:#FF6600;
+    font-weight: bold;
+}
+#tablit .out{
+    border:#64B8E4 1px solid;
+    color:#000;
+    background:#64B8E4;
+    font-weight: bold;
+}
+.tabcon{width:99%; height:365px; clear:both;}
+.dis{display:none;}
+</style>
+</head>
+<body>
+<form name="form1" method="post" action="?">
+<div class="ziti">　</div>    
+<table width="100%" cellpadding="3" cellspacing="1" border="0" align="center" class="table1">
+        <tr>
+            <td height="35" align="center" colspan="6" style="font-size:18px;">商品列表</td>
+        </tr>
+         <tr>
+        <td height="30" align="center" >选择</td>
+        <td height="30" align="center" >货号</td>
+        <td height="30" align="center" >产品名称</td>
+        <td align="center" >会员价格</td>
+        <td align="center" >购买数量</td>
+        <td align="center" >总价格</td>
+      </tr>
+              
+      <tr>
+          <td align="center" ><input type="checkbox" name="UID[]" id="UID" value="56" onClick="zjiage();"></td>
+        <td align="center" >2012</td>
+        <td align="center" >非凡风衣</td>
+        <td align="center" >￥160.00</td>
+        <td align="center" ><input name="56num" id="56num" type="text" value="0" size="4" onKeyUp="jiage(this,56);">          <input name="56" id="56" type="hidden" value="160.00"></td>
+        <td align="center" ><label name="56zong" id="56zong">0</label></td>
+      </tr>
+           
+      <tr>
+          <td align="center" ><input type="checkbox" name="UID[]" id="UID" value="57" onClick="zjiage();"></td>
+        <td align="center" >s898</td>
+        <td align="center" >水杯</td>
+        <td align="center" >￥180.00</td>
+        <td align="center" ><input name="57num" id="57num" type="text" value="0" size="4" onKeyUp="jiage(this,57);">          <input name="57" id="57" type="hidden" value="180.00"></td>
+        <td align="center" ><label name="57zong" id="57zong">0</label></td>
+      </tr>
+           
+      <tr>
+          <td align="center" ><input type="checkbox" name="UID[]" id="UID" value="58" onClick="zjiage();"></td>
+        <td align="center" >zqw</td>
+        <td align="center" >竹纤维</td>
+        <td align="center" >￥110.00</td>
+        <td align="center" ><input name="58num" id="58num" type="text" value="0" size="4" onKeyUp="jiage(this,58);">          <input name="58" id="58" type="hidden" value="110.00"></td>
+        <td align="center" ><label name="58zong" id="58zong">0</label></td>
+      </tr>
+           
+            <tr><td colspan="5"><input name="button3" type="submit" class="button_green" id="button3" value="购买" onClick="{if(confirm('您确定要购买商品吗?')){this.document.selform.submit();return true;}return false;}">  </td>
+        <td>总计金额：<label name="zongjiage" id="zongjiage">0</label></td>
+      </tr>
+      <tr>
+        <td height="21" colspan="6" align="right">
+        　</td>
+      </tr>
+    </table>
+    </form>
+</body>
+</html>

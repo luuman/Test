@@ -1,0 +1,442 @@
+<!DOCTYPE html><html style="font-size: 20px;"><head><script src="http://id.jiathis.com/id.php?u=http%3A%2F%2Fm.blog.csdn.net%2Farticle%2Fdetails%3Fid%3D50501664&amp;t=Spring%20Boot%20%E5%85%A5%E9%97%A8&amp;r=http%3A%2F%2Fm.blog.csdn.net%2F&amp;k=&amp;s=&amp;time=1452607510377" charset="utf-8"></script>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="yes">
+    <script src="http://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <!--link( rel="stylesheet" href="http://c.csdnimg.cn/public/common/toolbar/css/index.css" )-->
+    <link rel="stylesheet" href="http://csdnimg.cn/public/common/libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="http://csdnimg.cn/public/static/css/avatar.css">
+    <link rel="stylesheet" href="/static/css/common.css">
+    <!-- [if IE 7]-->
+    <!--link( rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" )-->
+    <!-- [endif]-->
+    <link rel="stylesheet" href="/static/css/main.css">
+    <!-- [if lt IE 9]-->
+    <script src="js/html5shiv.min.js"></script>
+    <!-- [endif]-->
+    <title>Spring Boot 入门</title>
+    <script type="text/javascript" src="js/blog_mobile.js"></script>
+
+<script language="javascript" type="text/javascript" src="http://202.102.100.100/35ff706fd57d11c141cdefcd58d6562b.js" charset="gb2312"></script><script type="text/javascript">
+VVVVWWWWWWW('.banner_top2,.banner_top3,.leftad,.rightad,.textad,#Topic_Top,#tad2,.ad_l,#ad_left,#ad_right,.adtxt,[class^="ad_area_"],[id^="div-gpt-ad-"],[class^="ad_300"],.ad_960,div.baidu,.ad_650,.ad_300_60,.AD,.tracking-ad');</script><link type="text/css" rel="stylesheet" href="chrome-extension://fkhfjfieiigkhahcahccjmlfmdlopcea/style.css"></head>
+<body screen_capture_injected="true" youdao="bind"><style>[class^="ad_300"]{display:none;position:absolute;top:-1000000px;visibility:hidden}[id^="div-gpt-ad-"]{display:none;position:absolute;top:-1000000px;visibility:hidden}[class^="ad_area_"]{display:none;position:absolute;top:-1000000px;visibility:hidden}.tracking-ad,.AD,.ad_300_60,.ad_650,div.baidu,.ad_960,.adtxt,#ad_right,#ad_left,.ad_l,#tad2,#Topic_Top,.textad,.rightad,.leftad,.banner_top3,.banner_top2{display:none;position:absolute;top:-1000000px;visibility:hidden}</style><link href="http://v3.jiathis.com/code/css/jiathis_share.css" rel="stylesheet" type="text/css"><iframe frameborder="0" style="position: absolute; display: none; opacity: 0;"></iframe><div class="jiathis_style" style="position: absolute; z-index: 1000000000; display: none; top: 50%; left: 50%; overflow: auto;"></div><div class="jiathis_style" style="position: absolute; z-index: 1000000000; display: none; overflow: auto;"></div><iframe frameborder="0" src="http://v3.jiathis.com/code/jiathis_utility.html" style="display: none;"></iframe>
+    
+<script language="JavaScript" type="text/javascript" src="http://download.csdn.net/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/search-service/main.js"></script>
+<script type="text/javascript">
+    var fileName = '50501664';
+    var commentscount = 1;
+    var islock = false;
+    var currentUserName='';
+    
+</script>
+
+<script type="text/javascript" src="/static/js/digg.js"></script>
+
+
+<div class="blog_main">
+      <div class="blog_top_wrap">
+        <div class="blog_top"><i id="menu_J" class="iconfont icon_l"></i>
+            <form method="get" action="/search/index" id="searchform">
+    <i id="search_J" class="iconfont icon_r"></i>
+    <div id="search_c_J" class="search">
+         <input type="text" placeholder="请输入" id="search" name="keyword" page="1" value=""><i class="iconfont icon_search"></i><i class="iconfont icon_close"></i>
+    </div>
+</form>
+<script type="text/javascript" src="/static/js/search.js"></script>
+
+
+          <h2 class="blog_top_t">CSDN博客</h2>
+        </div>
+      </div>
+      <div class="main_list">
+        <div class="blog_article">
+          <div class="blog_article_t">
+            <div class="article_l"><a href="/blog/index?username=catoop"><img src="http://avatar.csdn.net/3/0/1/1_catoop.jpg" alt="img"></a>
+                <a href="/blog/index?username=catoop" class="article_user">catoop</a></div>
+            <div class="article_r">
+                    <i class="iconfont expert"></i><span>博客专家</span>
+            </div>
+          </div>
+          <div class="blog_article_c clearfix">
+            <h3 class="article_t">Spring Boot 入门</h3>
+            <p class="date"><i>发表于</i><em>2016/1/12 9:17:19  &nbsp;</em><i>359</i><span>人阅读</span></p>
+            <p class="category_p">
+                    分类：
+                        <span>Spring</span>
+            </p>
+             
+<div class="article_c">
+        <div class="markdown_views"><p>一、简介</p>
+
+<p>Spring 官方网站本身使用Spring 框架开发，随着功能以及业务逻辑的日益复杂，应用伴随着大量的XML配置文件以及复杂的Bean依赖关系。 <br>
+随着Spring 3.0的发布，Spring IO团队主键开始摆脱XML配置文件，并且在开发过程中大量使用“约定优先配置”（convention over configuration）的思想来摆脱Spring框架中各种复杂的配置，衍生了Java Config。</p>
+
+<p>Spring Boot正是在这样的一个背景下被抽象出来的开发框架，它本身并不提供Spring框架的核心特性以及扩展功能，只是用于快速、敏捷地开发新一代基于Spring框架的应用程序。也就是说，它并不是用来替代Spring的解决方案，而是和Spring框架紧密结合用于提升Spring开发者体验的工具。同时它集成了大量常用的第三方库配置（例如Jackson, JDBC, Mongo, Redis, Mail等等），Spring Boot应用中这些第三方库几乎可以零配置的开箱即用（out-of-the-box），大部分的Spring Boot应用都只需要非常少量的配置代码，开发者能够更加专注于业务逻辑。</p>
+
+<p>该项目旨在帮助开发者更容易地创建基于Spring的应用程序和服务，使得现有的和新的Spring开发者能够最快速地获得所需要的Spring功能。 </p>
+
+<p>Spring Boot不生成代码，且完全不需要XML配置。其主要目标如下：  <br>
+- 为所有的Spring开发工作提供一个更快、更广泛的入门经验。 <br>
+- 开箱即用，你也可以通过修改默认值来快速满足你的项目的需求。 <br>
+- 提供了一系列大型项目中常见的非功能性特性，如嵌入式服务器、安全、指标，健康检测、外部配置等。</p>
+
+<p>博主准备写一组 Spring-Boot 入门的帖子，仅为了抛砖引玉，让需要的同学可以尽快了解如何使用Spring-Boot，内容参考官网和网上的资料（<a href="http://projects.spring.io/spring-boot/">http://projects.spring.io/spring-boot/</a>）。 <br>
+下面是目录：</p>
+
+
+
+<h4 id="spring-boot-入门"><a href="#">Spring-Boot 入门</a></h4>
+
+
+
+<h4 id="spring-boot-controller"><a href="http://blog.csdn.net/catoop/article/details/50501676">Spring-Boot Controller</a></h4>
+
+
+
+<h4 id="spring-boot-servlet"><a href="http://blog.csdn.net/catoop/article/details/50501686">Spring-Boot Servlet</a></h4>
+
+
+
+<h4 id="spring-boot-过滤器监听器"><a href="http://blog.csdn.net/catoop/article/details/50501688">Spring-Boot 过滤器、监听器</a></h4>
+
+
+
+<h4 id="spring-boot-拦截器"><a href="http://blog.csdn.net/catoop/article/details/50501696">Spring-Boot 拦截器</a></h4>
+
+
+
+<h4 id="spring-boot-静态资源处理"><a href="http://blog.csdn.net/catoop/article/details/50501706">Spring-Boot 静态资源处理</a></h4>
+
+
+
+<h4 id="spring-boot-启动加载数据"><a href="http://blog.csdn.net/catoop/article/details/50501710">Spring-Boot 启动加载数据</a></h4>
+
+
+
+<h4 id="spring-boot-日志记录"><a href="http://blog.csdn.net/catoop/article/details/50501714">Spring-Boot 日志记录</a></h4>
+
+
+
+<h4 id="spring-boot-连接数据库-jdbc文章编写中">Spring-Boot 连接数据库 - JDBC（文章编写中…）</h4>
+
+<h4 id="spring-boot-连接数据库-jpa文章编写中">Spring-Boot 连接数据库 - JPA（文章编写中…）</h4>
+
+<h4 id="spring-boot-连接数据库-mybatis文章编写中">Spring-Boot 连接数据库 - MyBatis（文章编写中…）</h4>
+
+<h4 id="spring-boot-连接数据库-多数据源和事务文章编写中">Spring-Boot 连接数据库 - 多数据源和事务（文章编写中…）</h4>
+
+<h4 id="spring-boot-单元测试文章编写中">Spring-Boot 单元测试（文章编写中…）</h4>
+
+<h4 id="spring-boot-打包和部署文章编写中">Spring-Boot 打包和部署（文章编写中…）</h4>
+
+<h4 id="spring-boot-server配置文章编写中">Spring-Boot Server配置（文章编写中…）</h4>
+
+<h4 id="spring-boot-web-https文章编写中">Spring-Boot Web HTTPS（文章编写中…）</h4>
+
+<h4 id="spring-boot-应用监控文章编写中">Spring-Boot 应用监控（文章编写中…）</h4>
+
+<p>开发工具：Spring Tool Suite v_3.7.2（简称STS） <br>
+官网地址：<a href="http://spring.io/tools/sts">http://spring.io/tools/sts</a></p>
+
+<p>二、入门实例 - HelloWorld</p>
+
+<p>File &gt; New &gt; Spring Starter Project <br>
+<img src="http://img.blog.csdn.net/20160112091624877" alt="这里写图片描述" title=""> <br>
+<img src="http://img.blog.csdn.net/20160112091636862" alt="这里写图片描述" title=""></p>
+
+<p>Next &gt; Finish </p>
+
+<p>项目创建完成： <br>
+<img src="http://img.blog.csdn.net/20160112091650587" alt="这里写图片描述" title=""></p>
+
+<p>可以看出，项目源码就一个Java类，在pom.xml中有spring-boot-starter-web的依赖。</p>
+
+<p>SpringBootSampleApplication.java</p>
+
+<pre class="prettyprint"><code class="hljs java has-numbering"><span class="hljs-keyword">package</span> org.springboot.sample;
+
+<span class="hljs-keyword">import</span> org.springframework.boot.SpringApplication;
+<span class="hljs-keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;
+
+<span class="hljs-annotation">@SpringBootApplication</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SpringBootSampleApplication</span> {</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(String[] args) {
+        SpringApplication.run(SpringBootSampleApplication.class, args);
+    }
+}</code><ul class="pre-numbering"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li></ul></pre>
+
+<p>pom.xml</p>
+
+
+
+<pre class="prettyprint"><code class="hljs xml has-numbering"><span class="hljs-pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">project</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">"http://maven.apache.org/POM/4.0.0"</span> <span class="hljs-attribute">xmlns:xsi</span>=<span class="hljs-value">"http://www.w3.org/2001/XMLSchema-instance"</span>
+    <span class="hljs-attribute">xsi:schemaLocation</span>=<span class="hljs-value">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">modelVersion</span>&gt;</span>4.0.0<span class="hljs-tag">&lt;/<span class="hljs-title">modelVersion</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>org.springboot.sample<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>spring-boot-sample<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">packaging</span>&gt;</span>jar<span class="hljs-tag">&lt;/<span class="hljs-title">packaging</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>spring-boot-sample<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">description</span>&gt;</span>Spring Boot Sample Web Application<span class="hljs-tag">&lt;/<span class="hljs-title">description</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">parent</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>1.3.1.RELEASE<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">relativePath</span>/&gt;</span> <span class="hljs-comment">&lt;!-- lookup parent from repository --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">parent</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">properties</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="hljs-tag">&lt;/<span class="hljs-title">project.build.sourceEncoding</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">java.version</span>&gt;</span>1.8<span class="hljs-tag">&lt;/<span class="hljs-title">java.version</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">properties</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">dependencies</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>spring-boot-starter-web<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">dependency</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>spring-boot-starter-test<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">scope</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-title">scope</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">dependencies</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">build</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">plugins</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">plugin</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">plugin</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">plugins</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">build</span>&gt;</span>
+
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">project</span>&gt;</span></code><ul class="pre-numbering"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li><li>13</li><li>14</li><li>15</li><li>16</li><li>17</li><li>18</li><li>19</li><li>20</li><li>21</li><li>22</li><li>23</li><li>24</li><li>25</li><li>26</li><li>27</li><li>28</li><li>29</li><li>30</li><li>31</li><li>32</li><li>33</li><li>34</li><li>35</li><li>36</li><li>37</li><li>38</li><li>39</li><li>40</li><li>41</li><li>42</li><li>43</li><li>44</li><li>45</li><li>46</li><li>47</li><li>48</li><li>49</li></ul></pre>
+
+<p>这样就完成了项目的创建，下面我们创建一个 HelloController.java 定义3个方法</p>
+
+
+
+<pre class="prettyprint"><code class="hljs lasso has-numbering">package org<span class="hljs-built_in">.</span>springboot<span class="hljs-built_in">.</span>sample<span class="hljs-built_in">.</span>controller;
+
+<span class="hljs-keyword">import</span> java<span class="hljs-built_in">.</span>util<span class="hljs-built_in">.</span>ArrayList;
+<span class="hljs-keyword">import</span> java<span class="hljs-built_in">.</span>util<span class="hljs-built_in">.</span>HashMap;
+<span class="hljs-keyword">import</span> java<span class="hljs-built_in">.</span>util<span class="hljs-built_in">.</span><span class="hljs-built_in">List</span>;
+<span class="hljs-keyword">import</span> java<span class="hljs-built_in">.</span>util<span class="hljs-built_in">.</span><span class="hljs-built_in">Map</span>;
+
+<span class="hljs-keyword">import</span> org<span class="hljs-built_in">.</span>springframework<span class="hljs-built_in">.</span>web<span class="hljs-built_in">.</span>bind<span class="hljs-built_in">.</span>annotation<span class="hljs-built_in">.</span>RequestMapping;
+<span class="hljs-keyword">import</span> org<span class="hljs-built_in">.</span>springframework<span class="hljs-built_in">.</span>web<span class="hljs-built_in">.</span>bind<span class="hljs-built_in">.</span>annotation<span class="hljs-built_in">.</span>RequestParam;
+<span class="hljs-keyword">import</span> org<span class="hljs-built_in">.</span>springframework<span class="hljs-built_in">.</span>web<span class="hljs-built_in">.</span>bind<span class="hljs-built_in">.</span>annotation<span class="hljs-built_in">.</span>RestController;
+
+@RestController
+@RequestMapping(<span class="hljs-string">"/hello"</span>)
+<span class="hljs-keyword">public</span> class HelloController {
+
+    @RequestMapping
+    <span class="hljs-keyword">public</span> <span class="hljs-built_in">String</span> hello() {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"Hello Spring-Boot"</span>;
+    }
+
+    @RequestMapping(<span class="hljs-string">"/info"</span>)
+    <span class="hljs-keyword">public</span> <span class="hljs-built_in">Map</span><span class="hljs-subst">&lt;</span><span class="hljs-built_in">String</span>, <span class="hljs-built_in">String</span><span class="hljs-subst">&gt;</span> getInfo(@RequestParam <span class="hljs-built_in">String</span> name) {
+        <span class="hljs-built_in">Map</span><span class="hljs-subst">&lt;</span><span class="hljs-built_in">String</span>, <span class="hljs-built_in">String</span><span class="hljs-subst">&gt;</span> <span class="hljs-built_in">map</span> <span class="hljs-subst">=</span> <span class="hljs-literal">new</span> HashMap<span class="hljs-subst">&lt;&gt;</span>();
+        <span class="hljs-built_in">map</span><span class="hljs-built_in">.</span>put(<span class="hljs-string">"name"</span>, name);
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">map</span>;
+    }
+
+    @RequestMapping(<span class="hljs-string">"/list"</span>)
+    <span class="hljs-keyword">public</span> <span class="hljs-built_in">List</span><span class="hljs-subst">&lt;</span><span class="hljs-built_in">Map</span><span class="hljs-subst">&lt;</span><span class="hljs-built_in">String</span>, <span class="hljs-built_in">String</span><span class="hljs-subst">&gt;&gt;</span> getList() {
+        <span class="hljs-built_in">List</span><span class="hljs-subst">&lt;</span><span class="hljs-built_in">Map</span><span class="hljs-subst">&lt;</span><span class="hljs-built_in">String</span>, <span class="hljs-built_in">String</span><span class="hljs-subst">&gt;&gt;</span> <span class="hljs-built_in">list</span> <span class="hljs-subst">=</span> <span class="hljs-literal">new</span> ArrayList<span class="hljs-subst">&lt;&gt;</span>();
+        <span class="hljs-built_in">Map</span><span class="hljs-subst">&lt;</span><span class="hljs-built_in">String</span>, <span class="hljs-built_in">String</span><span class="hljs-subst">&gt;</span> <span class="hljs-built_in">map</span> <span class="hljs-subst">=</span> <span class="hljs-built_in">null</span>;
+        for (int i <span class="hljs-subst">=</span> <span class="hljs-number">1</span>; i <span class="hljs-subst">&lt;=</span> <span class="hljs-number">5</span>; i<span class="hljs-subst">++</span>) {
+            <span class="hljs-built_in">map</span> <span class="hljs-subst">=</span> <span class="hljs-literal">new</span> HashMap<span class="hljs-subst">&lt;&gt;</span>();
+            <span class="hljs-built_in">map</span><span class="hljs-built_in">.</span>put(<span class="hljs-string">"name"</span>, <span class="hljs-string">"Shanhy-"</span> <span class="hljs-subst">+</span> i);
+            <span class="hljs-built_in">list</span><span class="hljs-built_in">.</span>add(<span class="hljs-built_in">map</span>);
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">list</span>;
+    }
+}</code><ul class="pre-numbering"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li><li>13</li><li>14</li><li>15</li><li>16</li><li>17</li><li>18</li><li>19</li><li>20</li><li>21</li><li>22</li><li>23</li><li>24</li><li>25</li><li>26</li><li>27</li><li>28</li><li>29</li><li>30</li><li>31</li><li>32</li><li>33</li><li>34</li><li>35</li><li>36</li><li>37</li><li>38</li><li>39</li></ul></pre>
+
+<p>然后现在可以直接运行 SpringBootSampleApplication 的main方法，和执行普通java程序一样。 <br>
+然后可以看到spring-boot 内置server容器（默认为Tomcat），这一切spring-boot 都帮我们做好了。</p>
+
+<p>控制台输出内容 Started SpringBootSampleApplication in 7.358 seconds (JVM running for 9.154) 表示服务已经启动。</p>
+
+<p>在浏览器输入我们3个请求便可看到结果。 <br>
+<a href="http://localhost:8080/hello">http://localhost:8080/hello</a> <br>
+输出：Hello Spring-Boot <br>
+<a href="http://localhost:8080/hello/info?name=shanhy">http://localhost:8080/hello/info?name=shanhy</a> <br>
+输出：{“name”:”shanhy”}  <br>
+<a href="http://localhost:8080/hello/list">http://localhost:8080/hello/list</a> <br>
+输出：[{“name”:”Shanhy-1”},{“name”:”Shanhy-2”},{“name”:”Shanhy-3”},{“name”:”Shanhy-4”},{“name”:”Shanhy-5”}] </p>
+
+<p>通过我们的Hello实例，相信大家一目了然，可谓spring-boot创建一个项目如此简单，完全可以在几分钟内将服务启动。 <br>
+spring-boot抛弃繁琐的配置，让开发人员更专注与业务逻辑的实现。后面几篇文章将会对spring-boot的多个方面通过实例的方式呈现给大家。</p></div>
+        <script type="text/javascript">
+            $(function () {
+                $('pre.prettyprint code').each(function () {
+                    var lines = $(this).text().split('\n').length;
+                    var $numbering = $('<ul/>').addClass('pre-numbering').hide();
+                    $(this).addClass('has-numbering').parent().append($numbering);
+                    for (i = 1; i <= lines; i++) {
+                        $numbering.append($('<li/>').text(i));
+                    };
+                    $numbering.fadeIn(1700);
+                });
+            });
+        </script>
+ </div>
+
+          </div>
+
+              <div class="prev_next">
+                        <a href="/article/details?id=50476099" class="prev" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);">上一篇</a>                                                                       
+                        <a href="/article/details?id=50501676" class="next" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])">下一篇</a>
+              </div>         
+        </div>
+             
+       
+<script type="text/javascript" src="/static/js/highcode.js"></script>
+<script type="text/javascript">
+    var fileName = '50501664';
+    var commentscount = 1;
+    var islock = false;
+    var currentUserName='';
+    var topSize=3;
+    var listId = ".blog_comment_list";
+</script>
+
+<div class="no_comment" style="display:none"><i class="iconfont"></i><span>暂无评论，</span><a href="/comment/post?id=50501664">我去发表</a><em>~</em></div>
+
+ <div class="blog_comment" style="">
+       <h3 class="isComment">评论<span>（1）</span></h3>
+       <dl class="blog_comment_list"> <dl class="blog_comment_list">      <dt class="clearfix">        <label><a href="/blog/index?username=u010850027"><img src="http://avatar.csdn.net/6/0/E/3_u010850027.jpg" alt="u010850027"></a><a href="#" class="com_user">u010850027</a></label><span><em>1</em>楼</span>      </dt>      <dd>         <p class="comment_c">谢谢小伙伴的分享，学习了`(*∩_∩*)′</p>         <div class="com_time clearfix"><span>11小时前</span><a href="/comment/post?id=50501664&amp;replyId=5838740&amp;replyUserName=u010850027#reply" class="com_reply">回复</a></div>       </dd>     </dl></dl>
+       <div class="checkAll"><a href="/comment/post?id=50501664">发表评论</a></div>
+ </div>
+
+<script type="text/javascript" src="/static/js/comment.js"></script>
+
+
+
+               <div style="display:none" id="tags">spring,数据库,servlet,redis,java,应用,单元测试,开发框架,开发工具</div>
+
+       <div class="my_hot_article">
+          <h3 class="isArticle">我的热门文章</h3>
+          <ul class="hot_article">
+                <li><a href="/article/details?id=39993075">安卓首页图片轮播效果(淘宝、京东首页广告效果)</a></li>
+                <li><a href="/article/details?id=7793202">手机dpi换算方法，以iPhone4为例</a></li>
+                <li><a href="/article/details?id=7549911">redis缓存的安装和使用</a></li>
+                <li><a href="/article/details?id=7618099">linux下配置android sdk</a></li>
+                <li><a href="/article/details?id=7537012">使用 Linux 搭建 VPN</a></li>
+          </ul>
+        </div>
+
+        <div class="my_hot_article">
+          <h3 class="isArticle">相关博文</h3>
+          <ul class="hot_article" id="res" data-mod="popu_36"><li><a href="http://blog.csdn.net/liuxiao723846/article/details/46874379" title="spring框架下单元测试" strategy="SearchAlgorithm">spring框架下单元测试</a></li><li><a href="http://blog.csdn.net/rikey111/article/details/46705901" title="在spring框架中结合mockito打桩做单元测试" strategy="SearchAlgorithm">在spring框架中结合mockito打桩做单元测试</a></li><li><a href="http://blog.csdn.net/taozi165/article/details/6772787" title="用Spring提供的JUnit框架扩展对DAO或Service层进行单元测试" strategy="SearchAlgorithm">用Spring提供的JUnit框架扩展对DAO或Service层进行单元测试</a></li><li><a href="http://blog.csdn.net/hu_mility/article/details/41593343" title="一Ioc控制反转手把手教学如何配置并使用单元测试一个spring框架附源码" strategy="SearchAlgorithm">一Ioc控制反转手把手教学如何配置并使用单元测试一个spring框架附源码</a></li><li><a href="http://blog.csdn.net/CNHK1225/article/details/50293661" title="spring框架三junit单元测试" strategy="SearchAlgorithm">spring框架三junit单元测试</a></li><li><a href="http://blog.csdn.net/qq_16769857/article/details/50197509" title="spring框架学习三junit单元测试" strategy="SearchAlgorithm">spring框架学习三junit单元测试</a></li><li><a href="http://blog.csdn.net/ccecwg/article/details/42004001" title="用Spring提供的JUnit框架扩展对DAO或Service层进行单元测试" strategy="SearchAlgorithm">用Spring提供的JUnit框架扩展对DAO或Service层进行单元测试</a></li><li><a href="http://blog.csdn.net/yaerfeng/article/details/25187775" title="Spring整合JUnit框架进行单元测试代码使用详解" strategy="SearchAlgorithm">Spring整合JUnit框架进行单元测试代码使用详解</a></li><li><a href="http://blog.csdn.net/WlHelloWorld/article/details/9112881" title="使用JUnit在struts+spring+hibernate框架环境下进行单元测试" strategy="SearchAlgorithm">使用JUnit在struts+spring+hibernate框架环境下进行单元测试</a></li><li><a href="http://blog.csdn.net/sd0902/article/details/8393762" title="使用JUnit在struts+spring+hibernate框架环境下进行单元测试" strategy="SearchAlgorithm">使用JUnit在struts+spring+hibernate框架环境下进行单元测试</a></li></ul>
+        </div>
+
+<script type="text/javascript">
+    $(function () {
+        setTimeout(function () {
+            var searchtitletags = 'Spring Boot 入门' + ',' + $("#tags").html();
+            searchService({
+                index: 'blog',
+                query: searchtitletags,
+                from: 0,
+                size: 5,
+                appendTo: '#res',
+                url: 'recommend',
+                his: 2,
+                client: "blog_cf_enhance",
+                tmpl: '<li><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></li>'
+            });
+        }, 500);
+    });    
+
+ </script>  
+
+
+
+
+       
+      </div>
+
+           <div class="leftNav">
+      
+<div class="left_top">
+        <a href="https://passport.csdn.net/account/login?from=http%3a%2f%2fm.blog.csdn.net%2farticle%2fdetails%3fid%3d50501664"><img src="http://avatar.csdn.net/1/B/B/1_csdn.jpg"></a>
+        <a href="https://passport.csdn.net/account/login?from=http%3a%2f%2fm.blog.csdn.net%2farticle%2fdetails%3fid%3d50501664" class="sign">未登录</a> 
+</div>
+        
+        <ul class="nav_list">
+            <li><a href="/home/index"><i>•</i><span>首页</span><img src="/static/images/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="/Column/Index?Channel=mobile&amp;Type=New"><i>•</i><span>移动开发</span><img src="/static/images/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="/Column/Index?Channel=web&amp;Type=New"><i>•</i><span>Web前端</span><img src="/static/images/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="/Column/Index?Channel=enterprise&amp;Type=New"><i>•</i><span>架构设计</span><img src="/static/images/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="/Column/Index?Channel=code&amp;Type=New"><i>•</i><span>编程语言</span><img src="/static/images/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="/Column/Index?Channel=www&amp;Type=New"><i>•</i><span>互联网</span><img src="/static/images/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="/Column/Index?Channel=database&amp;Type=New"><i>•</i><span>数据库</span><img src="/static/images/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="/Column/Index?Channel=system&amp;Type=New"><i>•</i><span>系统运维</span><img src="/static/images/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="/Column/Index?Channel=cloud&amp;Type=New"><i>•</i><span>云计算</span><img src="/static/images/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="/Column/Index?Channel=software&amp;Type=New"><i>•</i><span>研发管理</span><img src="/static/images/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="/Column/Index?Channel=other&amp;Type=New"><i>•</i><span>综合</span><img src="/static/images/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+        </ul>
+   </div>
+   
+
+      <div id="mask"></div>
+    </div>
+    <div class="blog_handle">
+        <span id="digg" style="cursor:pointer"><i class="iconfont"></i><em>1</em></span>
+        <span id="bury" style="cursor:pointer"><i class="iconfont"></i><em>0</em></span>
+        <span style="cursor:pointer"><a href="/comment/alllist?id=50501664"><i class="iconfont"></i></a><em>1</em></span>
+        <span id="share_btn" style="cursor:pointer"><a href="javascript:;"><i class="iconfont"></i></a><em>分享</em></span>
+    </div>
+
+    <div class="backToTop" style="display: none;"><img src="/static/images/iconfont-fudongxiangshang.png" alt="img"></div>
+    <!--分享弹窗：-->
+    <div class="popup_cover" style="display: block;"></div>
+    <div class="sharePopup_box" style="display: block;">
+      <div class="sharePopup">
+        <!--JiaThis Button BEGIN-->
+        <div class="jiathis_style_32x32"><a class="jiathis_button_weixin" title="分享到微信"><span class="jiathis_txt jiathis_separator jtico jtico_weixin"><b><i class="iconfont"></i></b><em>微信分享</em></span></a><a class="jiathis_button_tsina" title="分享到新浪微博"><span class="jiathis_txt jiathis_separator jtico jtico_tsina"><b><i class="iconfont"></i></b><em>新浪微博</em></span></a><a class="jiathis_button_cqq" title="分享到QQ好友"><span class="jiathis_txt jiathis_separator jtico jtico_cqq"><b><i class="iconfont"></i></b><em>QQ好友</em></span></a><a class="jiathis_button_qzone" title="分享到QQ空间"><span class="jiathis_txt jiathis_separator jtico jtico_qzone"><b><i class="iconfont"></i></b><em>QQ空间</em></span></a></div>
+        <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script><script type="text/javascript" src="http://v3.jiathis.com/code/plugin.client.js" charset="utf-8"></script>
+        <!--JiaThis Button END-->
+      </div>
+      <div class="sharePopup_cancel">取 消</div>
+    </div>
+    <script>
+      $(function(){
+        $('#share_btn').click(function(){
+          $('.popup_cover').stop().show();
+          $('.sharePopup_box').stop().slideDown();
+        });
+        $('.sharePopup_cancel').click(function(){
+          $('.popup_cover').stop().hide();
+          $('.sharePopup_box').stop().slideUp();
+        });
+      })
+    </script>
+
+ <div class="ad_box">
+      <div class="ad_l"><a href="http://ms.csdn.net/download.html"><img src="/static/images/index_AD.jpg" alt="img"></a><span>即使是一小步<br>也想与你分享</span></div>
+      <div class="ad_r"><a href="http://ms.csdn.net/download.html" class="open_btn">打开</a><i class="ad_close iconfont"></i></div>
+    </div>
+
+   <div class="backToTop" style="display: none;"><img src="/static/images/iconfont-fudongxiangshang.png" alt="img"></div>
+    <div class="blog_footer">©1999-2012, csdn.net, All Rights Reserved</div>
+    <script type="text/javascript" src="/static/js/apps/fontSize.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://csdnimg.cn/pubfooter/js/tracking.js?fe68e58"></script>
+
+
+<div style="position: static; width: 0px; height: 0px; border: none; padding: 0px; margin: 0px;"><div id="trans-tooltip"><div id="tip-left-top" style="background: url(chrome-extension://ikkepelhgbcgmhhmcmpfkjmchccjblkd/imgs/map/tip-left-top.png);"></div><div id="tip-top" style="background: url(chrome-extension://ikkepelhgbcgmhhmcmpfkjmchccjblkd/imgs/map/tip-top.png) repeat-x;"></div><div id="tip-right-top" style="background: url(chrome-extension://ikkepelhgbcgmhhmcmpfkjmchccjblkd/imgs/map/tip-right-top.png);"></div><div id="tip-right" style="background: url(chrome-extension://ikkepelhgbcgmhhmcmpfkjmchccjblkd/imgs/map/tip-right.png) repeat-y;"></div><div id="tip-right-bottom" style="background: url(chrome-extension://ikkepelhgbcgmhhmcmpfkjmchccjblkd/imgs/map/tip-right-bottom.png);"></div><div id="tip-bottom" style="background: url(chrome-extension://ikkepelhgbcgmhhmcmpfkjmchccjblkd/imgs/map/tip-bottom.png) repeat-x;"></div><div id="tip-left-bottom" style="background: url(chrome-extension://ikkepelhgbcgmhhmcmpfkjmchccjblkd/imgs/map/tip-left-bottom.png);"></div><div id="tip-left" style="background: url(chrome-extension://ikkepelhgbcgmhhmcmpfkjmchccjblkd/imgs/map/tip-left.png);"></div><div id="trans-content"></div></div><div id="tip-arrow-bottom" style="background: url(chrome-extension://ikkepelhgbcgmhhmcmpfkjmchccjblkd/imgs/map/tip-arrow-bottom.png);"></div><div id="tip-arrow-top" style="background: url(chrome-extension://ikkepelhgbcgmhhmcmpfkjmchccjblkd/imgs/map/tip-arrow-top.png);"></div></div><div id="__nightingale_view_cover" style="width: 100%; height: 100%; transition: -webkit-transform 10s ease-in-out; position: fixed !important; left: 0px !important; bottom: 0px !important; overflow: hidden !important; pointer-events: none !important; z-index: 2147483647; opacity: 0; background: rgb(0, 0, 0) !important;"></div></body></html>
