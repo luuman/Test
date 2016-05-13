@@ -46,7 +46,17 @@
 <div class="btn bg-green" id="otapbtns">tap me</div>
 <script src="../js/zepto.js"></script>
 <script type="text/javascript">
-	
+	(function(){
+	    var UA = window.navigator.userAgent;
+	    UA = UA.toLowerCase();
+	    var CLICK = '';
+	    if(/ipad|iphone|android/.test(UA)){
+	        window.MobileDevice = true;
+	        window.CLICK = 'tap';
+	    }else{
+	        window.CLICK = 'click';
+	    }
+	})();
 	var clickBtn = document.querySelector('#clickBtn'),
 		tapBtn = document.querySelector('#tapBtn'),
 		clickTime = document.querySelector('#clickTime'),
@@ -68,10 +78,10 @@
 		end = new Date();
 		tapTime.innerHTML = (end-start)+'ms';
 	})
-	$("#otapbtn").tap(function(){
+	$('#otapbtn')[CLICK](function(){
 		alert("Taptn");
 	})
-	$("#otapbtns").click(function(){
+	$('#otapbtns')[CLICK](function(){
 		alert("Taptn");
 	})
 </script>
