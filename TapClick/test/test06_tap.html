@@ -42,6 +42,8 @@
 	<div class="show_time_click" id="tapTime">0</div>
 </div>
 <div class="btn bg-green" id="otapbtn">tap me</div>
+
+<div class="btn bg-green" id="otapbtns">tap me</div>
 <script src="../js/zepto.js"></script>
 <script type="text/javascript">
 	
@@ -67,6 +69,9 @@
 		tapTime.innerHTML = (end-start)+'ms';
 	})
 	$("#otapbtn").tap(function(){
+		alert("Taptn");
+	})
+	$("#otapbtns").click(function(){
 		alert("Taptn");
 	})
 </script>
