@@ -41,10 +41,13 @@
 	<div class="btn bg-green" id="tapBtn">tap me</div>
 	<div class="show_time_click" id="tapTime">0</div>
 </div>
-<div class="btn bg-green" id="otapbtn">tap me</div>
+<div class="btn bg-green" id="otapbtn">CLICK</div>
 
-<div class="btn bg-green" id="otapbtns">tap me</div>
-<script src="../js/zepto.js"></script>
+<div class="btn bg-green" id="otapbtns">doubleTap</div>
+
+<div class="btn bg-green" id="otapbtn1">longTap</div>
+<script src="../js/zepto_touch_min.js"></script>
+
 <script type="text/javascript">
 	(function(){
 	    var UA = window.navigator.userAgent;
@@ -79,11 +82,15 @@
 		tapTime.innerHTML = (end-start)+'ms';
 	})
 	$('#otapbtn')[CLICK](function(){
-		alert("Taptn");
+		console.log("CLICK");
 	})
-	$('#otapbtns')[CLICK](function(){
-		alert("Taptn");
+	$('#otapbtns').doubleTap(function(){
+		console.log("doubleTap");
 	})
+	$('#otapbtn1').longTap(function(){
+		console.log("longTap");
+	})
+	 
 </script>
 
 </body>
