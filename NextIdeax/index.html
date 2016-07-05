@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <![endif]-->
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div class="m-wrap"  data-response="true">
+        <div class="m-loading" style="display: block;"  onclick="_czc.push(['_trackEvent', '开始播放', 'loading页']);DS.ready(function(){DS.sendBtnName('开始播放')});">
+            <div class="wrap">
+                <div class="loading-txt"></div>
+                <div class="loadProcess">
+                    <div class="txt-bg"></div>
+                    <div class="txt-box">
+                        <div class="txt">
+                            <p class="num"></p>
+                            <p class="percent">%</p>
+                        </div>
+                        <div class="click"></div>
+                    </div>
+                </div>
+                <div class="music-tips"></div>
+            </div>
+        </div>
+
+        <div class="m-index">
+            <div class="wrap">
+                <div class="m-video-box">
+                    <video src="http://106.2.184.230:9999/us.sinaimg.cn/004mCeCtjx071vc8Kbzp01040100QJvi0k01.mp4?KID=unistore,video&Expires=1467722995&ssig=vAbGyuHwzW" width="1" webkit-playsinline></video>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-end">
+            <div class="wrap">
+                <!--<img src="src/img/bg_end_test.png" width="375" height="600" alt="">-->
+                <div class="logo"></div>
+                <div class="cloud">
+                    <div class="cloud-left"></div>
+                    <div class="cloud-right"></div>
+                </div>
+                <div class="king">
+                    <div class="body"></div>
+                    <div class="head"></div>
+                    <div class="hand-left"></div>
+                    <div class="hand-right"></div>
+                </div>
+                <div class="btn-box">
+                    <div class="btn-share1" ontouchend="_czc.push(['_trackEvent', '分享一下', '落地页']);DS.ready(function(){DS.sendBtnName('分享一下')});"></div>
+                    <!-- <div class="btn-in" ontouchstart="_czc.push(['_trackEvent', '进宫去', '落地页']);DS.ready(function(){DS.sendBtnName('进宫报名')});"></div> -->
+                    <!--<div class="btn-share1"></div>
+                    <div class="btn-in"></div>-->
+                </div>
+            </div>
+            <div class="float-wrap">
+                <div class="f-king">
+                    <div class="f-body"></div>
+                    <div class="f-head"></div>
+                    <div class="f-hand-left"></div>
+                    <div class="f-hand-right"></div>
+                </div>
+                <div class="f-yan"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 基本监测代码（必须） -->
+    <script id="DS_PRE_JS" type="text/javascript" src="js/pre-ds-min.js">
+    </script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1259524115'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1259524115' type='text/javascript'%3E%3C/script%3E"));</script>
+    <script>
+        $('#cnzz_stat_icon_1259524115').hide();
+        document.getElementById("cnzz_stat_icon_1259524115").style.opacity = "0";
+        document.getElementById("cnzz_stat_icon_1259524115").style.display = "none";
+    </script>
+<!-- 按钮监测代码示例
+<script type="text/javascript">
+    var myBtnIn = $('.btn-in');
+    myBtnIn.ontouchstart = function ( ){
+        DS.ready(function(){
+            DS.sendBtnName("进宫去"); //这里填写你对按钮的命名
+        });
+    }
+    var myBtnShare = $('.btn-share1');
+    myBtnShare.ontouchend = function ( ){
+        DS.ready(function(){
+            DS.sendBtnName("分享一下"); //这里填写你对按钮的命名
+        });
+    }
+    var myBtnClick = $('.m-loading');
+    myBtnClick.onclick = function ( ){
+        DS.ready(function(){
+            DS.sendBtnName("开始播放"); //这里填写你对按钮的命名
+        });
+    }
+</script>-->
+</body>
+</html>
